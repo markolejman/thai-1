@@ -21,6 +21,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -28,6 +30,9 @@ body {
   background-color: var(--bright-snow);
   color: var(--thai-dark);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  max-width: 100vw;
+  position: relative;
 }
 
 @layer utilities {
@@ -37,5 +42,14 @@ body {
   
   .container-max {
     @apply max-w-6xl mx-auto;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }

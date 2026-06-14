@@ -9,19 +9,19 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden w-full"
       style={{ backgroundColor: "#1A1A1A" }}
     >
       {/* Background image with overlay */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full"
         style={{
           backgroundImage:
             "url('/Thai-Take-Away-Vega-feature-image-PinThaifood.jpg')",
         }}
       />
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 w-full"
         style={{
           background:
             "linear-gradient(to bottom, rgba(26,26,26,0.72) 0%, rgba(26,26,26,0.60) 50%, rgba(26,26,26,0.85) 100%)",
@@ -29,18 +29,18 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
+      <div className="relative z-10 text-center px-4 max-w-3xl mx-auto w-full">
         {/* Tag */}
         <p
-          className="inline-block text-xs font-mono font-semibold tracking-[0.2em] uppercase mb-6 px-4 py-1.5 border"
+          className="inline-block text-xs font-mono font-semibold tracking-[0.2em] uppercase mb-6 px-4 py-1.5 border max-w-full"
           style={{ color: "#C9A84C", borderColor: "#C9A84C" }}
         >
           Äkta Thai — Take Away
         </p>
 
         <h1
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-mono leading-tight mb-4"
-          style={{ color: "#F8F9FA" }}
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-mono leading-tight mb-4 max-w-full"
+          style={{ color: "#F8F9FA", wordWrap: "break-word" }}
         >
           Thai Take Away
           <br />
@@ -48,17 +48,17 @@ export default function Hero() {
         </h1>
 
         <p
-          className="text-base md:text-lg font-mono font-light max-w-xl mx-auto mb-8 leading-relaxed"
+          className="text-base md:text-lg font-mono font-light max-w-xl mx-auto mb-8 leading-relaxed px-2"
           style={{ color: "#CED4DA" }}
         >
           Autentisk thaimat tillagad med färska råvaror och genuina smaker —
           direkt till dig på Nynäsvägen i Stockholm.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-row gap-3 sm:gap-4 justify-center items-center flex-wrap px-2">
           <button
             onClick={scrollToMenu}
-            className="px-8 py-3.5 font-mono font-semibold text-sm tracking-wider uppercase transition-all duration-200 hover:opacity-90 active:scale-95"
+            className="px-6 sm:px-8 py-3.5 font-mono font-semibold text-sm tracking-wider uppercase transition-all duration-200 hover:opacity-90 active:scale-95"
             style={{
               backgroundColor: "#C9A84C",
               color: "#1A1A1A",
@@ -69,7 +69,7 @@ export default function Hero() {
           </button>
           <a
             href="tel:0760560777"
-            className="px-8 py-3.5 font-mono font-semibold text-sm tracking-wider uppercase border transition-all duration-200 hover:bg-white hover:bg-opacity-10"
+            className="px-6 sm:px-8 py-3.5 font-mono font-semibold text-sm tracking-wider uppercase border transition-all duration-200 hover:bg-white hover:bg-opacity-10"
             style={{
               color: "#F8F9FA",
               borderColor: "#F8F9FA",
@@ -83,7 +83,7 @@ export default function Hero() {
 
       {/* Hours badge */}
       <div
-        className="relative z-10 mt-12 md:mt-16 px-6 py-3 border flex flex-col sm:flex-row items-center gap-2 sm:gap-6"
+        className="relative z-10 mt-12 md:mt-16 px-4 sm:px-6 py-3 border flex flex-col sm:flex-row items-center gap-2 sm:gap-6 max-w-full mx-4"
         style={{
           borderColor: "rgba(201,168,76,0.4)",
           backgroundColor: "rgba(26,26,26,0.6)",
@@ -91,23 +91,23 @@ export default function Hero() {
         }}
       >
         <span
-          className="text-xs font-mono tracking-widest uppercase"
+          className="text-xs font-mono tracking-widest uppercase whitespace-nowrap"
           style={{ color: "#C9A84C" }}
         >
           Öppettider
         </span>
         <div
-          className="hidden sm:block w-px h-4"
+          className="hidden sm:block w-px h-4 flex-shrink-0"
           style={{ backgroundColor: "#C9A84C", opacity: 0.4 }}
         />
-        <span className="text-sm font-mono" style={{ color: "#E9ECEF" }}>
+        <span className="text-sm font-mono whitespace-nowrap" style={{ color: "#E9ECEF" }}>
           Mån–Fre: 11–19
         </span>
         <div
-          className="hidden sm:block w-px h-4"
+          className="hidden sm:block w-px h-4 flex-shrink-0"
           style={{ backgroundColor: "#C9A84C", opacity: 0.4 }}
         />
-        <span className="text-sm font-mono" style={{ color: "#E9ECEF" }}>
+        <span className="text-sm font-mono whitespace-nowrap" style={{ color: "#E9ECEF" }}>
           Söndag: 16–19
         </span>
       </div>

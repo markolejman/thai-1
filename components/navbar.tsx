@@ -51,10 +51,10 @@ export default function Navbar() {
           {/* Logo */}
           <button
             onClick={() => handleNavClick("#hero")}
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-2 group max-w-[70%] sm:max-w-none"
             aria-label="Thai Take Away Vega - gå till toppen"
           >
-            <span className="text-lg font-bold tracking-tight font-mono"
+            <span className="text-base sm:text-lg font-bold tracking-tight font-mono truncate"
               style={{ color: "#C9A84C" }}>
               🌿 Thai Take Away Vega
             </span>

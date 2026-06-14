@@ -29,19 +29,20 @@ export default function MapSection() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           {/* Map */}
           <div
-            className="lg:col-span-2 overflow-hidden"
+            className="lg:col-span-2 overflow-hidden w-full"
             style={{
               borderRadius: "3px",
               border: "1px solid #DEE2E6",
               aspectRatio: "16/9",
               minHeight: "280px",
+              maxWidth: "100%",
             }}
           >
             <iframe
               src="https://www.google.com/maps?q=Nynäsvägen+3F,+Haninge,+Sweden&output=embed"
               width="100%"
               height="100%"
-              style={{ border: 0, display: "block" }}
+              style={{ border: 0, display: "block", maxWidth: "100%" }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

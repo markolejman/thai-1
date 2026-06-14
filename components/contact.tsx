@@ -128,7 +128,6 @@ export default function Contact() {
               </p>
               <ul className="space-y-1.5">
                 {hours.map(({ day, time }) => {
-                  const isSunday = day === "Söndag";
                   const isClosed = time === "Stängt";
                   return (
                     <li
@@ -137,16 +136,14 @@ export default function Contact() {
                     >
                       <span
                         style={{
-                          color: isSunday ? "#C9A84C" : "#CED4DA",
-                          fontWeight: isSunday ? "700" : "400",
+                          color: "#CED4DA",
                         }}
                       >
                         {day}
                       </span>
                       <span
                         style={{
-                          color: isClosed ? "#6B7280" : isSunday ? "#C9A84C" : "#F8F9FA",
-                          fontWeight: isSunday ? "700" : "400",
+                          color: isClosed ? "#6B7280" : "#F8F9FA",
                         }}
                       >
                         {time}

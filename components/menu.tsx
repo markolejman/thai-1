@@ -185,53 +185,59 @@ export default function Menu() {
           </p>
         </div>
 
-        {/* Category filter tabs */}
-        <div className="mb-6 -mx-4 px-4 overflow-x-auto">
-          <div className="flex gap-2 min-w-max pb-2">
-            {tabs.map((tab) => {
-              const isActive = activeTab === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className="px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider whitespace-nowrap transition-all duration-200"
+        {/* Category filter tabs and legend */}
+        <div
+          className="rounded mb-8 p-5 md:p-6"
+          style={{ backgroundColor: "#FFFFFF", border: "1px solid #E9ECEF" }}
+        >
+          {/* Category filter tabs */}
+          <div className="mb-4 overflow-x-auto scrollbar-hide -mx-5 px-5 md:-mx-6 md:px-6">
+            <div className="flex gap-2 pb-2">
+              {tabs.map((tab) => {
+                const isActive = activeTab === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className="px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider whitespace-nowrap transition-all duration-200 flex-shrink-0"
+                    style={{
+                      backgroundColor: isActive ? "#1A1A1A" : "#E9ECEF",
+                      color: isActive ? "#C9A84C" : "#6B7280",
+                      borderRadius: "3px",
+                      border: isActive ? "1px solid #1A1A1A" : "1px solid #CED4DA",
+                    }}
+                  >
+                    {tab.label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Tag legend */}
+          <div className="flex flex-wrap gap-3">
+            {Object.entries(tagStyles).map(([key, val]) => (
+              <div key={key} className="flex items-center gap-1.5">
+                <span
+                  className="text-[10px] font-mono font-bold px-1.5 py-0.5 uppercase tracking-wider"
                   style={{
-                    backgroundColor: isActive ? "#1A1A1A" : "#E9ECEF",
-                    color: isActive ? "#C9A84C" : "#6B7280",
-                    borderRadius: "3px",
-                    border: isActive ? "1px solid #1A1A1A" : "1px solid #CED4DA",
+                    backgroundColor: val.bg,
+                    color: val.text,
+                    borderRadius: "2px",
                   }}
                 >
-                  {tab.label}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Tag legend */}
-        <div className="flex flex-wrap gap-3 mb-8">
-          {Object.entries(tagStyles).map(([key, val]) => (
-            <div key={key} className="flex items-center gap-1.5">
+                  {val.label}
+                </span>
+              </div>
+            ))}
+            <div className="flex items-center gap-1.5">
               <span
                 className="text-[10px] font-mono font-bold px-1.5 py-0.5 uppercase tracking-wider"
-                style={{
-                  backgroundColor: val.bg,
-                  color: val.text,
-                  borderRadius: "2px",
-                }}
+                style={{ backgroundColor: "#E9ECEF", color: "#6B7280", borderRadius: "2px" }}
               >
-                {val.label}
+                Stark → Mycket Stark: fråga personalen
               </span>
             </div>
-          ))}
-          <div className="flex items-center gap-1.5">
-            <span
-              className="text-[10px] font-mono font-bold px-1.5 py-0.5 uppercase tracking-wider"
-              style={{ backgroundColor: "#E9ECEF", color: "#6B7280", borderRadius: "2px" }}
-            >
-              Stark → Mycket Stark: fråga personalen
-            </span>
           </div>
         </div>
 
