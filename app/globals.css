@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bright-snow: #F8F9FA;
+  --platinum: #E9ECEF;
+  --pale-slate-light: #CED4DA;
+  --alabaster-grey: #DEE2E6;
+  --pale-slate: #ADB5BD;
+  --thai-gold: #C9A84C;
+  --thai-red: #9B2335;
+  --thai-dark: #1A1A1A;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto Mono", monospace;
+  background-color: var(--bright-snow);
+  color: var(--thai-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-16 px-4 md:px-8 lg:px-16;
+  }
+  
+  .container-max {
+    @apply max-w-6xl mx-auto;
+  }
+}
